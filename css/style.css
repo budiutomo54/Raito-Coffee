@@ -352,8 +352,8 @@ html {
 .menu {
   background: url("../img/bg11.jpg");
   background-size: cover;
-  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 97%, rgba(0, 0, 0, 0));
-  mask-image: linear-gradient(rgba(0, 0, 0, 1) 97%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 98.5%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 98.5%, rgba(0, 0, 0, 0));
 }
 
 .menu h2,
@@ -645,6 +645,10 @@ footer .credit a {
 @media (max-width: 991px) {
   .contact {
     padding: 50px;
+  }
+
+  .contact .content {
+    padding-top: 4rem;
   }
 
   .container {
