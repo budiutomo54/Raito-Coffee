@@ -98,6 +98,7 @@ html {
   top: 100%;
   right: 7%;
   background-color: #fff;
+  border: 1px solid var(--primary);
   width: 50rem;
   height: 5rem;
   display: flex;
@@ -150,6 +151,8 @@ html {
   width: 35rem;
   padding: 0 1.5rem;
   background-color: #fff;
+  border: 1px solid var(--primary);
+  border-right: none;
   color: var(--background);
   transition: 0.3s;
 }
@@ -297,8 +300,8 @@ html {
 .about {
   background: url("../img/bg5.jpg");
   background-size: cover;
-  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
-  mask-image: linear-gradient(rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 97%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 97%, rgba(0, 0, 0, 0));
 }
 
 .about,
@@ -347,7 +350,7 @@ html {
 
 /* Menu Section */
 .menu {
-  background: url("../img/bg2.jpg");
+  background: url("../img/bg11.jpg");
   background-size: cover;
   -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 97%, rgba(0, 0, 0, 0));
   mask-image: linear-gradient(rgba(0, 0, 0, 1) 97%, rgba(0, 0, 0, 0));
@@ -656,6 +659,20 @@ footer .credit a {
   .contactForm {
     width: 100%;
   }
+
+  .navbar .navbar-logo span {
+    position: absolute;
+    top: 20%;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .navbar .navbar-logo span1 {
+    font-size: 1.2rem;
+    font-style: italic;
+    padding-left: 2.5rem;
+  }
 }
 
 /* Tablet */
@@ -666,6 +683,16 @@ footer .credit a {
 
   #hamburger-menu {
     display: inline-block;
+  }
+
+  .navbar .navbar-logo span {
+    top: 19%;
+    font-size: 2.4rem;
+  }
+
+  .navbar .navbar-logo span1 {
+    font-size: 1.4rem;
+    padding-left: 3rem;
   }
 
   .navbar .navbar-nav {
@@ -733,8 +760,18 @@ footer .credit a {
 }
 
 /* Mobile Phone */
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   html {
     font-size: 55%;
+  }
+
+  .navbar .navbar-logo span {
+    top: 19%;
+    font-size: 2.6rem;
+  }
+
+  .navbar .navbar-logo span1 {
+    font-size: 1.6rem;
+    padding-left: 3rem;
   }
 }
