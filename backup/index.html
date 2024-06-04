@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-widht, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <title>Homepage -</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icon awsome -->
+    <script
+      src="https://kit.fontawesome.com/9b84cc94a7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Alpine js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- App -->
+    <script src="src/app.js"></script>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar" x-data>
+      <a href="index.html" class="navbar-logo"
+        ><img src="img/logo.png" width="40" height="40" alt="" srcset="" /><span
+          >RAITO</span
+        ><span1>Coffee</span1>
+      </a>
+
+      <div class="navbar-nav">
+        <a href="#">Home</a>
+        <a href="menu.html">Menu</a>
+
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button">
+          <i data-feather="shopping-cart"></i>
+          <span
+            class="quantity-badge"
+            x-show="$store.cart.quantity"
+            x-text="$store.cart.quantity"
+          ></span>
+        </a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Search Form start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i> </label>
+      </div>
+      <!-- Search Form end -->
+
+      <!-- Shopping Cart start -->
+      <div class="shopping-cart">
+        <template x-for="(item, index) in $store.cart.items" x-keys="index">
+          <div class="cart-item">
+            <img :src="`img/products/${item.img}`" :alt="item.name" />
+            <div class="item-detail">
+              <h3 x-text="item.name"></h3>
+              <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button id="remove" @click="$store.cart.remove(item.id)">
+                  &minus;
+                </button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button>
+                &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>
+            </div>
+          </div>
+        </template>
+        <b x-show="!$store.cart.items.length"
+          ><b1><i class="fa-solid fa-ghost"></i></b1
+        ></b>
+        <h4 x-show="!$store.cart.items.length">Belum Ada Menu Dipilih</h4>
+        <h5 x-show="$store.cart.items.length">
+          Total : <span x-text="rupiah($store.cart.total)"></span>
+        </h5>
+      </div>
+      <!-- Shopping Cart end -->
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Hero Section Start -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Warisan Rasa yang <span> Mengikat Generasi Keluarga </span></h1>
+        <p>Behind every successful person is a substantial amount of coffee.</p>
+      </main>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Start -->
+    <section id="about" class="about">
+      <h2><span>About</span> Us</h2>
+      <div class="row">
+        <div class="about-img">
+          <img src="img/24.jpg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <p>
+            Perusahaan kopi baru yang berdiri pada tahun 2024 di Kota Depok. Di
+            awali dengan industri rumah tangga, kami terus berinovasi dan
+            memberikan produk berkualitas kepada masyarakat, sehingga kami dapat
+            berkembang dan akan menjadi skala Cafe besar di Kota Depok.
+          </p>
+          <p>
+            Nama "RAITO" sendiri diambil dari bahasa jepang yang memiliki arti
+            "cahaya", cahaya berasal dari nama belakang saya yaitu "Nurcahyo",
+            kata "Nur" jika di artikan adalah cahaya.
+          </p>
+          <p>
+            RAITO merupakan perusahaan manufaktur yang berasal dari JEPANG ,
+            Depok yang memproduksi kopi, dari biji kopi mentah(green beans),
+            biji kopi sangrai(roasted beans), dan kopi bubuk(ground coffee) dan
+            OEM(Ekspor).
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- About End -->
+
+    <!-- Footer start -->
+    <footer>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="">Budhi Utomo Nurcahyo</a>. | &copy; 2024</p>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
