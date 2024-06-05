@@ -274,8 +274,8 @@ html {
   font-size: 1.6rem;
   margin-top: 1rem;
   line-height: 1.4;
-  font-weight: 400;
-  color: #000000;
+  font-weight: 300;
+  color: #fff;
   text-shadow: 5px 5px 10px rgba(53, 53, 53, 0.5);
   mix-blend-mode: difference;
 }
